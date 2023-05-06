@@ -44,7 +44,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className='fixed z-50 p-3 px-4 md:p-6 w-screen '>
+		<header className='fixed z-50 p-3 px-4 md:p-6 w-screen bg-white box-shadow-lg'>
 			<div className='hidden md:flex h-full w-full'>
 				<Link to={'/'} className='flex items-center gap-2'>
 					<img src={Logo} alt='logo' className='w-9 object-cover' />
@@ -132,7 +132,7 @@ const Header = () => {
 					<p className='text-headingColor text-lg font-normal'>HemDestro</p>
 				</Link>
 
-				<div className='flex justify-center items-center cursor-pointer'>
+				<div className='flex justify-center items-center cursor-pointer ml-6'>
 					<motion.img
 						whileTap={{ scale: 0.6 }}
 						src={user ? user.photoURL : Avatar}
