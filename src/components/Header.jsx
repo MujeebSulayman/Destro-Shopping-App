@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Logo from './img/logo.png';
+import Logo from '../img/logo.png';
 import { motion } from 'framer-motion';
 import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md';
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { app } from '../firebase.config';
 
-import Avatar from './img/avatar.png';
+import Avatar from '../img/avatar.png';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
@@ -120,7 +120,7 @@ const Header = () => {
 			{/* Mobile */}
 			<div className='flex item-center justify-between md:hidden w-full h-full'>
 				<div className='flex relative justify-center items-center cursor-pointer'>
-					<MdShoppingBasket className='text-textColor text-2xl ml-7' />
+					<MdShoppingBasket className='text-textColor text-2xl ml-4' />
 					<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
 						<p className='text-xs flex items-center justify-center text-white font-semibold'>
 							3
@@ -137,7 +137,7 @@ const Header = () => {
 						whileTap={{ scale: 0.6 }}
 						src={user ? user.photoURL : Avatar}
 						alt='userProfile'
-						className='w-10 mr-6 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full'
+						className='w-10 mr-4 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full'
 						onClick={login}
 					/>
 					{isMenu && (
@@ -156,16 +156,16 @@ const Header = () => {
 								</Link>
 							)}
 							<ul className='flex flex-col'>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1'>
+								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
 									Home
 								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1'>
+								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
 									Menu
 								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1'>
+								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
 									Services
 								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1'>
+								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
 									About
 								</li>
 								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1 mb-2'>
