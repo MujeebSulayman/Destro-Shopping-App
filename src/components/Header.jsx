@@ -54,7 +54,7 @@ const Header = () => {
 					initial={{ opacity: 0, x: 200 }}
 					animate={{ opacity: 1, x: 0 }}
 					exit={{ opacity: 0, x: 200 }}
-					className='flex items-center gap-7 ml-auto'
+					className='flex items-center gap-7 mr-10 ml-auto'
 				>
 					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
 						Home
@@ -81,7 +81,7 @@ const Header = () => {
 						</p>
 					</div>
 				</div>
-				<div className='flex ml-7 justify-center items-center cursor-pointer'>
+				<div className='flex ml-7 justify-center items-center cursor-pointer mr-10'>
 					<motion.img
 						whileTap={{ scale: 0.6 }}
 						src={user ? user.photoURL : Avatar}
@@ -132,7 +132,7 @@ const Header = () => {
 					<p className='text-headingColor text-lg font-normal'>HemDestro</p>
 				</Link>
 
-				<div className='flex justify-center items-center cursor-pointer ml-6'>
+				<div className='flex justify-center items-center cursor-pointer'>
 					<motion.img
 						whileTap={{ scale: 0.6 }}
 						src={user ? user.photoURL : Avatar}
