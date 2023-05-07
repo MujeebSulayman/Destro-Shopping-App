@@ -153,7 +153,7 @@ const Header = () => {
 								onClick={() => setToggle((prev) => !prev)}
 							/>
 						</div>
-
+						
 						<div
 							initial={{ opacity: 0, scale: 0.6 }}
 							animate={{ opacity: 1, scale: 1 }}
@@ -161,14 +161,7 @@ const Header = () => {
 							className={`${toggle ? 'flex' : 'hidden'
 								} w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col top-16 right-4 absolute`}
 						>
-							{user && user.email === 'sulaymanmujeeb6@gmail.com' && (
-								<Link to={'/createItem'}>
-									<p className='px-4 py-2 mb-2 flex items-center justify-center gap-2 cursor-pointer transition-all duration-100 ease-in-out text-textColor text-base hover:bg-slate-200'>
-										New Item
-										<MdAdd />
-									</p>
-								</Link>
-							)}
+
 							<ul className='flex flex-col'>
 								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
 									Home
@@ -187,8 +180,19 @@ const Header = () => {
 								</li>
 							</ul>
 
+
+							{user && user.email === 'sulaymanmujeeb6@gmail.com' && (
+								<Link to={'/createItem'}>
+									<p className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-2 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'>
+										New Item
+										<MdAdd />
+									</p>
+								</Link>
+
+
+							)}
 							<p
-								className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
+								className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-2 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
 								onClick={logout}
 							>
 								Logout
