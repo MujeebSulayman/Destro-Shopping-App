@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Logo from '../img/logo.png';
 import { motion } from 'framer-motion';
+import  close from '../img/close.svg';
+import  menu  from '../img/menu.svg';
 import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md';
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
@@ -17,6 +19,7 @@ const Header = () => {
 
 	const [{ user }, dispatch] = useStateValue();
 	const [isMenu, setIsMenu] = useState(false);
+	const [toggle, setToggle] = useState(false);
 
 	const login = async () => {
 		if (!user) {
@@ -44,7 +47,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className='fixed z-50 p-3 px-4 md:p-6 w-screen bg-white box-shadow-lg'>
+		<header className='fixed z-50 p-3 px-4 md:p-6 w-screen bg-black box-shadow-lg'>
 			<div className='hidden md:flex h-full w-full'>
 				<Link to={'/'} className='flex items-center gap-2'>
 					<img src={Logo} alt='logo' className='w-9 object-cover' />
@@ -140,12 +143,19 @@ const Header = () => {
 						className='w-10 mr-4 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full'
 						onClick={login}
 					/>
-					{isMenu && (
+					<div className='sm:hidden flex left-9 justify-end items-center'>
+						<img
+							src={toggle ? close : menu}
+							alt='menu'
+							className='w-28px h-28px object-contain cursor-pointer'
+							onClick={() => setToggle((prev) => !prev)}
+						/>
 						<div
 							initial={{ opacity: 0, scale: 0.6 }}
 							animate={{ opacity: 1, scale: 1 }}
 							exit={{ opacity: 0, scale: 0.6 }}
-							className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col top-16 right-4 absolute'
+							className={`${toggle ? 'flex' : 'hidden'
+					} w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col top-16 right-4 absolute`}
 						>
 							{user && user.email === 'sulaymanmujeeb6@gmail.com' && (
 								<Link to={'/createItem'}>
@@ -173,6 +183,33 @@ const Header = () => {
 								</li>
 							</ul>
 
+							<p
+								className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
+								onClick={logout}
+							>
+								Logout
+								<MdLogout />
+							</p>
+						</div>
+					</div>
+					
+
+					{isMenu && (
+						<div
+							initial={{ opacity: 0, scale: 0.6 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0.6 }}
+							className='w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col top-16 right-4 absolute'
+						>
+							{user && user.email === 'sulaymanmujeeb6@gmail.com' && (
+								<Link to={'/createItem'}>
+									<p className='px-4 py-2 mb-2 flex items-center justify-center gap-2 cursor-pointer transition-all duration-100 ease-in-out text-textColor text-base hover:bg-slate-200'>
+										New Item
+										<MdAdd />
+									</p>
+								</Link>
+							)}
+							
 							<p
 								className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
 								onClick={logout}
