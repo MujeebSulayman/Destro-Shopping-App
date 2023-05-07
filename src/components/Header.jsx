@@ -110,7 +110,7 @@ const Header = () => {
 
 							<p
 								className='px-4 py-2 flex items-center justify-center gap-2 cursor-pointer transition-all duration-100 ease-in-out text-textColor text-base hover:bg-slate-200'
-								onClick={login}
+								onClick={logout}
 							>
 								Logout
 								<MdLogout />
@@ -177,6 +177,12 @@ const Header = () => {
 								</li>
 								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1 mb-2'>
 									Contact
+								</li>
+
+								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1 mb-2'
+									onClick={login}
+								>
+									login
 								</li>
 							</ul>
 
