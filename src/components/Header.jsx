@@ -179,11 +179,7 @@ const Header = () => {
 									Contact
 								</li>
 
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1 mb-2'
-									onClick={login}
-								>
-									login
-								</li>
+
 							</ul>
 
 
