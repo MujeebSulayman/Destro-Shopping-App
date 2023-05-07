@@ -30,7 +30,7 @@ const HomeContainer = () => {
                 <button type='button' className='bg-blue-400 w-auto px-4 py-2 rounded-lg mb-12 lg:mb-0 hover:shadow-lg hover:bg-blue-800 transition-all ease-in-out duration-100 text-white'>Order now</button>
             </div>
             <div className='py-2 flex-1 items-center relative'>
-                <img src={cheff} alt="Hero-bg" className='ml-auto w-full lg:w-auto lg:h-650' />
+                <img src={cheff} alt="Hero-bg" className='flex items-center justify-center ml-auto h-400 w-full lg:w-auto lg:h-650' />
 
 
 
