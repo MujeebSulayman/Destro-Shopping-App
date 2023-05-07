@@ -110,7 +110,7 @@ const Header = () => {
 
 							<p
 								className='px-4 py-2 flex items-center justify-center gap-2 cursor-pointer transition-all duration-100 ease-in-out text-textColor text-base hover:bg-slate-200'
-								onClick={logout}
+								onClick={login}
 							>
 								Logout
 								<MdLogout />
