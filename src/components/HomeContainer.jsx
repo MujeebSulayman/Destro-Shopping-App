@@ -25,7 +25,7 @@ const HomeContainer = () => {
                 <p className='text-[2.5rem] lg:text-[4.25rem] font-bold tracking-wide text-headingColor'>
                     The fastest Delivery in <span className='text-blue-400 text-[3rem] lg:text-[5rem]'>Ibadan City</span>
                 </p>
-                <p className='text-base text-textColor text-left md:w-[80%]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, voluptatum! Magnam obcaecati veritatis eius repudiandae nemo, porro iste nisi alias deserunt sunt pariatur voluptas voluptates culpa accusamus est at earum.</p>
+                <p className='text-base text-textColor text-left md:w-[80%]'>Restaurant style Yogurt Mint Sauce is delicious dip which is quick and easy to .. This is a standard Indian mint chutney served with poppadums along with mint and lemon. We provide pleasure to your tastebuds 😉..</p>
 
                 <button type='button' className='bg-blue-400 w-auto px-4 py-2 rounded-lg mb-12 lg:mb-0 hover:shadow-lg hover:bg-blue-800 transition-all ease-in-out duration-100 text-white'>Order now</button>
             </div>
