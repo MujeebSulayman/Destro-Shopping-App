@@ -1,28 +1,20 @@
-import { getApp, getApps, initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
-import { getAuth } from 'firebase/auth'
+import { getApp, getApps, initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyCr4kwjcvQnnrgRGMChyEkSCL9fjPE5294',
-	authDomain: 'hemdestro.firebaseapp.com',
-	databaseURL: 'https://hemdestro-default-rtdb.firebaseio.com',
-	projectId: 'hemdestro',
-	storageBucket: 'hemdestro.appspot.com',
-	messagingSenderId: '285876951599',
-	appId: '1:285876951599:web:c346f39b4b507bb226c4da',
+	apiKey: "AIzaSyD_bxGG0WgOKDejZvER2fTq2xZZjfUs8zs",
+	authDomain: "restaurantapp-c2ed6.firebaseapp.com",
+	databaseURL: "https://restaurantapp-c2ed6-default-rtdb.firebaseio.com",
+	projectId: "restaurantapp-c2ed6",
+	storageBucket: "restaurantapp-c2ed6.appspot.com",
+	messagingSenderId: "174416156605",
+	appId: "1:174416156605:web:2ec169ea4ef3e7bb25e4d4",
 };
-
-
 
 const app = getApps.length > 0 ? getApp() : initializeApp(firebaseConfig);
 
 const firestore = getFirestore(app);
 const storage = getStorage(app);
 
-
-const auth = getAuth(app)
-
-
-export { app, firestore, storage, auth };
-
+export { app, firestore, storage };
