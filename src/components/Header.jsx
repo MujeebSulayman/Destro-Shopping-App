@@ -153,7 +153,7 @@ const Header = () => {
 								onClick={() => setToggle((prev) => !prev)}
 							/>
 						</div>
-						
+
 						<div
 							initial={{ opacity: 0, scale: 0.6 }}
 							animate={{ opacity: 1, scale: 1 }}
@@ -182,22 +182,27 @@ const Header = () => {
 
 
 							{user && user.email === 'sulaymanmujeeb6@gmail.com' && (
-								<Link to={'/createItem'}>
-									<p className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-2 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'>
-										New Item
-										<MdAdd />
+								<div>
+									<Link to={'/createItem'}>
+
+
+										<p className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-2 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'>
+											New Item
+											<MdAdd />
+										</p>
+									</Link>
+									<p
+										className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-2 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
+										onClick={logout}
+									>
+										Logout
+										<MdLogout />
 									</p>
-								</Link>
+								</div>
 
 
 							)}
-							<p
-								className='m-2 p-2 flex items-center justify-center bg-gray-200 gap-2 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base'
-								onClick={logout}
-							>
-								Logout
-								<MdLogout />
-							</p>
+
 						</div>
 					</div>
 
