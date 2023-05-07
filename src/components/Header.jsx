@@ -143,7 +143,7 @@ const Header = () => {
 						className='w-10 mr-4 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full'
 						onClick={login}
 					/>
-					<h2 onClick={login}>Login</h2>
+
 					<div className='sm:hidden flex left-9 justify-end items-center'>
 						<div className='bg-gray-500 rounded-lg h-9 w-9 flex justify-center items-center'>
 							<img
@@ -153,7 +153,7 @@ const Header = () => {
 								onClick={() => setToggle((prev) => !prev)}
 							/>
 						</div>
-						
+
 						<div
 							initial={{ opacity: 0, scale: 0.6 }}
 							animate={{ opacity: 1, scale: 1 }}
