@@ -13,13 +13,21 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
 
+
+
 const Header = () => {
 	const firebaseAuth = getAuth(app);
 	const provider = new GoogleAuthProvider();
 
-	const [{ user }, dispatch] = useStateValue();
+	const [{ user, cartShow }, dispatch] = useStateValue();
 	const [isMenu, setIsMenu] = useState(false);
 	const [toggle, setToggle] = useState(false);
+	const showCart = () => {
+		dispatch({
+			type: actionType.SET_CART_SHOW,
+			cartShow: !cartShow
+		})
+	}
 
 	const login = async () => {
 		if (!user) {
@@ -76,7 +84,7 @@ const Header = () => {
 					</li>
 				</motion.ul>
 
-				<div className='flex relative justify-center items-center cursor-pointer'>
+				<div className='flex relative justify-center items-center cursor-pointer' onClick={showCart}>
 					<MdShoppingBasket className='text-textColor text-2xl ml-7' />
 					<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
 						<p className='text-xs flex items-center justify-center text-white font-semibold'>
@@ -122,7 +130,7 @@ const Header = () => {
 
 			{/* Mobile */}
 			<div className='flex item-center justify-between md:hidden bg-white w-full h-full'>
-				<div className='flex relative justify-center items-center cursor-pointer'>
+				<div className='flex relative justify-center items-center cursor-pointer' onClick={showCart}>
 					<MdShoppingBasket className='text-textColor text-2xl ml-4' />
 					<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
 						<p className='text-xs flex items-center justify-center text-white font-semibold'>
