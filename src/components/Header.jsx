@@ -5,7 +5,7 @@ import close from '../img/close.svg';
 import menu from '../img/menu.svg';
 import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithRedirect, GoogleAuthProvider } from 'firebase/auth';
 import { app } from '../firebase.config';
 
 import Avatar from '../img/avatar.png';
@@ -32,8 +32,8 @@ const Header = () => {
 	const login = async () => {
 		if (!user) {
 			const {
-				user: { refreshToken, providerData },
-			} = await signInWithPopup(firebaseAuth, provider);
+				user: { providerData },
+			} = await signInWithRedirect(firebaseAuth, provider);
 			dispatch({
 				type: actionType.SET_USER,
 				user: providerData[0],
