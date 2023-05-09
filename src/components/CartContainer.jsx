@@ -25,7 +25,6 @@ const CartContainer = () => {
       return accumulator + item.qty * item.price;
     }, 0);
     setTot(totalPrice);
-    console.log(tot);
   }, [tot, flag]);
 
   const clearCart = () => {
@@ -93,7 +92,7 @@ const CartContainer = () => {
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-200 text-xl font-semibold">Total</p>
               <p className="text-gray-200 text-xl font-semibold">
-                ${tot + 2.5}
+                N{tot + 1000}
               </p>
             </div>
 
