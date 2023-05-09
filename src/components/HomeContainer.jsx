@@ -1,5 +1,4 @@
 import React from 'react'
-import { heroData } from '../utils/Data';
 import Delivery from '../img/delivery.png';
 import cheff from '../img/cheff.png'
 

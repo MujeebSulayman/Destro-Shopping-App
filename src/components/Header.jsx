@@ -19,7 +19,7 @@ const Header = () => {
 	const firebaseAuth = getAuth(app);
 	const provider = new GoogleAuthProvider();
 
-	const [{ user, cartShow }, dispatch] = useStateValue();
+	const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 	const [isMenu, setIsMenu] = useState(false);
 	const [toggle, setToggle] = useState(false);
 	const showCart = () => {
@@ -86,11 +86,13 @@ const Header = () => {
 
 				<div className='flex relative justify-center items-center cursor-pointer' onClick={showCart}>
 					<MdShoppingBasket className='text-textColor text-2xl ml-7' />
-					<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
-						<p className='text-xs flex items-center justify-center text-white font-semibold'>
-							3
-						</p>
-					</div>
+					{cartItems && cartItems.length > 0 && (
+						<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
+							<p className='text-xs flex items-center justify-center text-white font-semibold'>
+								{cartItems.length}
+							</p>
+						</div>
+					) }
 				</div>
 				<div className='flex ml-7 justify-center items-center cursor-pointer mr-10'>
 					<motion.img
@@ -132,11 +134,13 @@ const Header = () => {
 			<div className='flex item-center justify-between md:hidden bg-white w-full h-full'>
 				<div className='flex relative justify-center items-center cursor-pointer' onClick={showCart}>
 					<MdShoppingBasket className='text-textColor text-2xl ml-4' />
-					<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
-						<p className='text-xs flex items-center justify-center text-white font-semibold'>
-							3
-						</p>
-					</div>
+					{cartItems && cartItems.length > 0 && (
+						<div className='absolute -top-1 -right-3 w-6 h-6 flex items-center justify-center rounded-full bg-cartNumBg'>
+							<p className='text-xs flex items-center justify-center text-white font-semibold'>
+								{cartItems.length}
+							</p>
+						</div>
+					)}
 				</div>
 				<Link to={'/'} className='flex items-center gap-2'>
 					<img src={Logo} alt='logo' className='w-8 h-10 object-cover' />
