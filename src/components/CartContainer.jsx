@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { RiRefreshFill } from "react-icons/ri";
+import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 
 import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
 import EmptyCart from "../img/emptyCart.svg";
 import CartItem from "./CartItem";
+import { useNavigate } from 'react-router-dom'
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
@@ -35,6 +37,38 @@ const CartContainer = () => {
 
     localStorage.setItem("cartItems", JSON.stringify([]));
   };
+
+  const navigate = useNavigate()
+
+  const config = {
+    public_key: 'FLWPUBK-de9b0b4d56b3bf16275a5df84076f237-X',
+    tx_ref: Date.now(),
+    amount: tot + 1000,
+    currency: 'NGN',
+    payment_options: 'card,mobilemoney,ussd',
+    customer: {
+      email: 'user@gmail.com',
+      phone_number: '070********',
+      name: 'john doe',
+    },
+    customizations: {
+      title: 'Hem-Destro',
+      description: 'Payment for items in cart',
+      logo: '',
+    },
+  };
+
+
+   const fwConfig = {
+    ...config,
+    text: 'Pay with Flutterwave!',
+    callback: (response) => {
+       console.log(response);
+      closePaymentModal() // this will close the modal programmatically
+    },
+    onClose: () => {},
+  };
+
 
   return (
     <motion.div
@@ -96,13 +130,18 @@ const CartContainer = () => {
               </p>
             </div>
 
+
+            <button className='bg-yellow-500 p-2 rounded-lg text-center my-4 font-bold tracking-wider sansPro'>
+              <FlutterWaveButton {...fwConfig} />
+            </button>
+
             {user ? (
               <motion.button
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
               >
-                Checkout
+                <FlutterWaveButton {...fwConfig} />
               </motion.button>
             ) : (
               <motion.button
