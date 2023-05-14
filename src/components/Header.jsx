@@ -68,25 +68,25 @@ const Header = () => {
 					className='flex items-center gap-7 mr-10 ml-auto'
 				>
 					<Link to={'/'}>
-					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
-						Home
-					</li>
+						<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+							Home
+						</li>
 					</Link>
 					<Link to={'/menu'}>
-					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
-						Menu
-					</li>
+						<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+							Menu
+						</li>
 					</Link>
-					
+
 					<Link to={'/about'}>
-					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
-						About
-					</li>
+						<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+							About
+						</li>
 					</Link>
 					<Link to={'/contact'}>
-					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
-						Contact
-					</li>
+						<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+							Contact
+						</li>
 					</Link>
 				</motion.ul>
 
@@ -98,7 +98,7 @@ const Header = () => {
 								{cartItems.length}
 							</p>
 						</div>
-					) }
+					)}
 				</div>
 				<div className='flex ml-7 justify-center items-center cursor-pointer mr-10'>
 					<motion.img
@@ -181,21 +181,30 @@ const Header = () => {
 						>
 
 							<ul className='flex flex-col'>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
-									Home
-								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
-									Menu
-								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
-									Services
-								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
-									About
-								</li>
-								<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1 mb-2'>
-									Contact
-								</li>
+								<Link to={'/'}>
+
+									<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
+										Home
+									</li>
+								</Link>
+								<Link to={'/menu'}>
+
+									<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
+										Menu
+									</li>
+								</Link>
+								<Link to={'/about'}>
+
+									<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1' onClick={() => setIsMenu(false)}>
+										About
+									</li>
+								</Link>
+								<Link to={'/contact'}>
+
+									<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-200 px-8 py-1 mb-2'>
+										Contact
+									</li>
+								</Link>
 
 
 							</ul>
