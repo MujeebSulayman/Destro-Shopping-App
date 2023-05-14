@@ -67,21 +67,27 @@ const Header = () => {
 					exit={{ opacity: 0, x: 200 }}
 					className='flex items-center gap-7 mr-10 ml-auto'
 				>
+					<Link to={'/'}>
 					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
 						Home
 					</li>
+					</Link>
+					<Link to={'/menu'}>
 					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
 						Menu
 					</li>
-					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
-						Services
-					</li>
+					</Link>
+					
+					<Link to={'/about'}>
 					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
 						About
 					</li>
+					</Link>
+					<Link to={'/contact'}>
 					<li className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
 						Contact
 					</li>
+					</Link>
 				</motion.ul>
 
 				<div className='flex relative justify-center items-center cursor-pointer' onClick={showCart}>
