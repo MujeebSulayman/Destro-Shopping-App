@@ -21,7 +21,7 @@ const HomeContainer = () => {
                         />
                     </div>
                 </div>
-                <p className='text-[2.5rem] lg:text-[4.25rem] font-bold tracking-wide text-headingColor'>
+                <p className='text-[2.5rem] lg:text-[4.6rem] font-extrabold tracking-wide text-headingColor'>
                     The fastest Delivery in <span className='text-blue-400 text-[3rem] lg:text-[5rem]'>Ibadan City</span>
                 </p>
                 <p className='text-base text-textColor text-left md:w-[80%]'>Restaurant style. Yogurt Mint Sauce is delicious dip which is quick and easy to .. This is a standard Indian mint chutney served with poppadums along with mint and lemon. We provide pleasure to your tastebuds 😉..</p>
