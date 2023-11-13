@@ -59,14 +59,14 @@ const CartContainer = () => {
   };
 
 
-   const fwConfig = {
+  const fwConfig = {
     ...config,
     text: 'Pay with Flutterwave!',
     callback: (response) => {
-       console.log(response);
+      console.log(response);
       closePaymentModal() // this will close the modal programmatically
     },
-    onClose: () => {},
+    onClose: () => { },
   };
 
 
@@ -134,24 +134,6 @@ const CartContainer = () => {
             <button className='bg-yellow-500 p-2 rounded-lg text-center my-4 font-bold tracking-wider sansPro'>
               <FlutterWaveButton {...fwConfig} />
             </button>
-
-            {/* {user ? (
-              <motion.button
-                whileTap={{ scale: 0.8 }}
-                type="button"
-                className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
-              >
-                <FlutterWaveButton {...fwConfig} />
-              </motion.button>
-            ) : (
-              <motion.button
-                whileTap={{ scale: 0.8 }}
-                type="button"
-                className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
-              >
-                Login to checkout
-              </motion.button>
-            )} */}
           </div>
         </div>
       ) : (
